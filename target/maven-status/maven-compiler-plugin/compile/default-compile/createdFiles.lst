@@ -1,0 +1,8 @@
+com/malmap/api/model/Gps.class
+com/malmap/api/ApiApplication.class
+com/malmap/api/controller/HelloWorldController.class
+com/malmap/api/repository/GpsRepository.class
+com/malmap/api/model/IpLocation.class
+com/malmap/api/controller/IpController.class
+com/malmap/api/model/Ip.class
+com/malmap/api/repository/IpRepository.class

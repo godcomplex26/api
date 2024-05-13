@@ -1,11 +1,9 @@
 package com.malmap.api.repository;
 
 import java.util.List;
-
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
 import com.malmap.api.model.Ip;
 import com.malmap.api.model.IpLocation;
 
@@ -21,8 +19,8 @@ public interface IpRepository extends JpaRepository<Ip, Long> {
     List<Object[]> countByCountryCode();
 
     @Query("SELECT i.countryCode, COUNT(i), g.longitude, g.latitude " +
-       "FROM Ip i " +
-       "LEFT JOIN Gps g ON i.countryCode = g.countryCode " +
-       "GROUP BY i.countryCode")
+           "FROM Ip i " +
+           "LEFT JOIN Gps g ON i.countryCode = g.countryCode " +
+           "GROUP BY i.countryCode, g.longitude, g.latitude")
     List<Object[]> countByCountryCodeWithGps();
 }

@@ -18,7 +18,7 @@ import com.malmap.api.repository.IpRepository;
 
 @RestController
 @RequestMapping("/api/ips")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:3000", "http://localhost"})
 public class IpController {
     private final IpRepository ipRepository;
 
@@ -84,5 +84,10 @@ public class IpController {
         }
         
         return countryCountList;
+    }
+
+    @GetMapping("/test")
+    public String test() {
+        return "test";
     }
 }
